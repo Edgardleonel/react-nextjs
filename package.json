@@ -4,14 +4,13 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "test": "echo \"No test specified\"",
-    "start": "node server.js",
-    "build": "next build",
-    "serve": "NODE_ENV=production node server.js"
+    "dev": "next -p 4000",
+    "build": "next build"
   },
   "dependencies": {
     "express": "^4.17.1",
     "isomorphic-fetch": "^2.2.1",
+    "isomorphic-unfetch": "^3.0.0",
     "next": "^9.4.4",
     "next-server": "^9.0.5",
     "react": "^16.13.1",

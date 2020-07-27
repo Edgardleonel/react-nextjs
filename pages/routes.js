@@ -1,8 +1,9 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Route, Switch, Link } from "react-router-dom";
 import { Redirect } from 'react-router';
-import Posts from './Home';
-
+import Home from './Home';
+import Produto from './Produto';
+import About from './about';
 
 function Status({ code, children }) {
     return (
@@ -15,62 +16,6 @@ function Status({ code, children }) {
     ); 
   }
   
-  function Index() {
-    return (
-    <>
-    <h2>Home</h2>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/about/">About</Link>
-          </li>
-          <li>
-            <Link to="/users/">Users</Link>
-          </li>
-          <li>
-            <Link to="/people/">People</Link>
-          </li> 
-          <li className="hvr-underline-from-center">
-            <Link to="/posts/1">Posts</Link>
-          </li> 
-        </ul>
-      </nav>
-    </>
-    );
-  }
-
-  function About() {
-    return (
-      <>
-      <h2>Home</h2>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/about/">About</Link>
-            </li>
-            <li>
-              <Link to="/users/">Users</Link>
-            </li>
-            <li>
-              <Link to="/people/">People</Link>
-            </li> 
-            <li className="hvr-underline-from-center">
-              <Link to="/posts/1">Posts</Link>
-            </li> 
-          </ul>
-        </nav>
-      </>
-      );
-    }
-  function Users() {
-    return <h2>Users</h2>;
-  }
   
   function NotFound() {
     return (
@@ -83,15 +28,32 @@ function Status({ code, children }) {
 
 function Routes() {
   return (
-  <Switch>
-    <Route path="/" exact component={Index} />
-    <Route path="/about/" component={About} />
-    <Route path="/users/" component={Users} />
-    <Route path="/posts/:id" component={Posts} />
-    <Redirect from="/people/" to="/users/" />
-    <Route component={NotFound}/>
-  </Switch>
-  );
+    <div>
+      <h1>Welcome to Next.js!</h1>
+      <nav>
+        <ul>
+          <li>
+            <Link href="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/produto">Produto</Link>
+          </li>
+          <li  className="hvr-underline-from-center">
+            <Link to="/about">Sobre</Link>
+          </li>
+        </ul>
+      </nav>
+      <Switch>
+        <Route path="/" exact component={Home} />
+        <Route path="/about"  component={About} />
+        <Route path="/produto" component={Produto} />
+    
+
+        <Route component={NotFound}/>
+      </Switch>
+    </div>
+  ); 
 }
 
 export default Routes;
+

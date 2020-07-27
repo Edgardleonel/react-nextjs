@@ -25,7 +25,7 @@ function Status({ code, children }) {
             <Link to="/">Home</Link>
           </li>
           <li>
-            <Link to="/posts/1">Posts</Link>
+            <Link to="/about">Posts</Link>
           </li> 
         </ul>
       </nav>
@@ -43,7 +43,7 @@ function Status({ code, children }) {
               <Link to="/">Home 2</Link>
             </li>
             <li>
-              <Link to="/posts/1">Posts 2</Link>
+              <Link to="/about">Posts 2</Link>
             </li> 
           </ul>
         </nav>
@@ -67,7 +67,7 @@ function Routes() {
   return (
   <Switch>
     <Route path="/" exact component={Index} />
-    <Route path="/posts/:id" component={Posts} />
+    <Route path="/about" component={Posts} />
     <Redirect from="/people/" to="/users/" />
     <Route component={NotFound}/>
   </Switch>
